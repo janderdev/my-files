@@ -365,3 +365,6 @@ FodyWeavers.xsd
 # Settings files
 appsettings.Development.json
 appsettings.json
+
+# Local settings for debugging
+.vscode/

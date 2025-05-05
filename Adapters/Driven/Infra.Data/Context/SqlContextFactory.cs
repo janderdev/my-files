@@ -13,7 +13,7 @@ public class SqlContextFactory : IDesignTimeDbContextFactory<SqlContext>
     {
         // Obtém a configuração do appsettings.json do projeto de inicialização (Api)
         var configuration = new ConfigurationBuilder()
-            .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../Api"))
+            .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../../Driving/Api"))
             .AddJsonFile("appsettings.json")
             .AddJsonFile("appsettings.Development.json", optional: true)
             .Build();

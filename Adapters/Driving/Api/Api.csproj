@@ -15,13 +15,16 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.4" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Application\Application.csproj" />
-    <ProjectReference Include="..\Infra.Data\Infra.Data.csproj" />
-    <ProjectReference Include="..\Infra.Email\Infra.Email.csproj" />
+    <ProjectReference Include="..\..\..\Core\Domain\Domain.csproj" />
+    <ProjectReference Include="..\..\..\Core\Application\Application.csproj" />
+    <ProjectReference Include="..\..\Driven\Infra.Data\Infra.Data.csproj" />
+    <ProjectReference Include="..\..\Driven\Infra.Email\Infra.Email.csproj" />
+    <ProjectReference Include="..\..\Driven\Infra.SNS\Infra.SNS.csproj" />
   </ItemGroup>
 
 </Project>

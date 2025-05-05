@@ -3,6 +3,7 @@ using Domain.Entities;
 using Infra.Data;
 using Infra.Data.Context;
 using Infra.Email;
+using Infra.SNS;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDataBaseService(connectionString);
 builder.Services.AddEmailService();
+builder.Services.AddSNSNotificationService(builder.Configuration);
 builder.Services.AddApplicationService();
 
 var app = builder.Build();

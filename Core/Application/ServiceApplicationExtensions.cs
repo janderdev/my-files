@@ -8,7 +8,9 @@ public static class ServiceApplicationExtensions
 {
     public static IServiceCollection AddApplicationService(this IServiceCollection services)
     {
-        services.AddTransient<IUserService, UserServiceManager>();
+        services.AddScoped<IUserService, UserService>();
+        services.AddScoped<IAuthService, AuthService>();
+        
         return services;
     }
 }

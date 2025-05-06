@@ -1,11 +1,13 @@
 ﻿using Domain.Entities;
 using Domain.Ports;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class UserController : ControllerBase
 {
     private readonly IUserService _userService;
@@ -33,9 +35,7 @@ public class UserController : ControllerBase
     public async Task<IActionResult> UpdateUser(Guid id, User user)
     {
         if (id != user.Id)
-        {
             return BadRequest();
-        }
 
         await _userService.UpdateUserAsync(user);
 

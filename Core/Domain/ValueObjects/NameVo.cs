@@ -25,7 +25,7 @@ public class NameVo
     {
         if (!IsValid())
         {
-            throw new InvalidNameException("Invalid Name");
+            throw new UserException("Invalid Name");
         }
     }
 }

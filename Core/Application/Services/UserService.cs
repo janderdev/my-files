@@ -11,8 +11,9 @@ public class UserService : IUserService
     private readonly INotificationService _notificationService;
 
     public UserService(IEmailService emailAdapter,
-                              IUserRepository userRepository,
-                              INotificationService notificationService)
+        IUserRepository userRepository,
+        INotificationService notificationService
+    )
     {
         _emailAdapter = emailAdapter;
         _userRepository = userRepository;

@@ -21,7 +21,7 @@ public class EmailVo
     {
         if (!IsValid())
         {
-            throw new InvalidEmailException("Invalid Email");
+            throw new UserException("Invalid Email");
         }
     }
 }

@@ -26,11 +26,13 @@ public class AuthService : IAuthService
 
     public async Task<AuthResponse> AuthenticateAsync(Auth auth)
     {
-        var users = await _userRepository.GetAll();
-        var user = users.FirstOrDefault(u => u.Email == auth.Username);
+        if (string.IsNullOrEmpty(auth.Email))
+            return new AuthResponse { Success = false, Message = "Email is required." };
+
+        var user = await _userRepository.GetByEmail(auth.Email);
 
         if (user == null)
-            return new AuthResponse { Success = false, Message = "Usuário não encontrado" };
+            return new AuthResponse { Success = false, Message = "Invalid credentials." };
 
         var token = GenerateJwtToken(user);
 

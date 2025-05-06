@@ -8,4 +8,5 @@ public interface IUserRepository
     Task<User> Insert(User user);
     Task<User> Update(User user);
     Task<User> Delete(Guid id);
+    Task<User?> GetByEmail(string email);
 }
